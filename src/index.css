@@ -1,0 +1,229 @@
+:root {
+  --bg-dark: #09090b;
+  --card-bg: #18181b;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --border: #27272a;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  background: linear-gradient(to right, #fff, #a1a1aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #09090b;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box; /* Fixes padding issues */
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+button.load-more-btn {
+  display: block;
+  margin-inline: auto;
+  width: fit-content;
+  min-width: 300px;
+  padding: 0.5rem;
+  background: transparent;
+  border: 2px solid #fcfcfc;
+  color: #a1a1aa;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.load-more-btn:hover {
+  font-size: 1rem;
+  background-color: #27272a;
+  color: #ffffff;
+}
+
+/* Calendar Overrides for Dark Mode */
+.react-calendar {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 12px;
+  color: white !important;
+  width: 100% !important;
+  font-family: inherit !important;
+}
+
+.react-calendar__tile {
+  color: white;
+}
+.react-calendar__tile--hover {
+  color: rgb(0, 0, 0);
+}
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+}
+.react-calendar__tile--now {
+  background: #3f3f46 !important;
+}
+.react-calendar__tile--active {
+  background: #002f7b !important;
+  color: white !important;
+}
+.react-calendar__navigation button {
+  color: white !important;
+  font-size: 1.2rem;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #27272a !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #72a5f8 !important ;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #3f3f46 !important;
+  color: white !important;
+  border-radius: 6px;
+}
+
+/* The 'X' Delete Button */
+.delete-btn {
+  background: #3f3f46;
+  color: #ef4444;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: white;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 800px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .grid-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .react-calendar {
+    width: 100% !important;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .sidebar > div:first-child {
+    margin-bottom: 0 !important;
+  }
+}
