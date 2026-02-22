@@ -7,6 +7,7 @@
 A modern, dark-themed daily expense tracker built with **React + Vite**.
 
 Sleek Spend allows you to:
+
 - Track daily transactions
 - Categorize expenses
 - Visualize spending habits
@@ -23,46 +24,53 @@ Sleek Spend allows you to:
 
 ## 📸 Screenshots
 
-> Add screenshots inside a `/screenshots` folder and update paths below.
-
 ### 💻 Desktop View
-![Desktop Screenshot](./screenshots/desktop.png)
+
+![Desktop Screenshot](./screenshots/desktop.jpg)
 
 ### 📱 Mobile View
-![Mobile Screenshot](./screenshots/mobile.png)
+
+![Mobile Screenshot](./screenshots/mobile.jpg)
 
 ---
 
 # ✨ Features
 
 ## 📅 Interactive Calendar Filtering
+
 - Filter by **single day**
 - Select **custom date ranges**
 - Built using `react-calendar`
 
 ## 📊 Real-Time Analytics
+
 - Total expense summary
 - Transaction count
 - Category breakdown
 - Dynamic progress bars
 
 ## 💾 Persistent Storage
+
 - Uses browser `localStorage`
 - No database required
 - Data never leaves your device
 
 ## 🗂 Smart Grouping
+
 Transactions are automatically grouped as:
+
 - Today
 - Yesterday
 - Formatted dates
 
 ## 📱 Fully Responsive
+
 - Mobile-first layout
 - Flexbox + Grid
 - Clean dark theme
 
 ## ⚡ Quick Expense Management
+
 - Add transactions instantly
 - Delete entries with one click
 
@@ -70,12 +78,12 @@ Transactions are automatically grouped as:
 
 # 🛠 Tech Stack
 
-| Category   | Technology |
-|------------|------------|
-| Frontend   | React 18 (JSX) |
-| Build Tool | Vite |
+| Category   | Technology                       |
+| ---------- | -------------------------------- |
+| Frontend   | React 18 (JSX)                   |
+| Build Tool | Vite                             |
 | Styling    | Custom CSS (Dark Mode Optimized) |
-| Packages   | react-calendar, gh-pages |
+| Packages   | react-calendar, gh-pages         |
 
 ---
 
@@ -161,7 +169,7 @@ expense-tracker/
 Ensure your `vite.config.js` includes:
 
 ```js
-base: '/expense-tracker/'
+base: "/expense-tracker/";
 ```
 
 ---
@@ -186,20 +194,20 @@ Contributions, issues, and feature requests are welcome.
 
 ### Steps:
 
-1. Fork the repository  
-2. Create a new branch  
+1. Fork the repository
+2. Create a new branch
    ```
    git checkout -b feature/YourFeature
    ```
-3. Commit changes  
+3. Commit changes
    ```
    git commit -m "Add YourFeature"
    ```
-4. Push branch  
+4. Push branch
    ```
    git push origin feature/YourFeature
    ```
-5. Open a Pull Request  
+5. Open a Pull Request
 
 ---
 
