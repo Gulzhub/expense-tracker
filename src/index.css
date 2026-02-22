@@ -162,15 +162,15 @@ button.load-more-btn {
   background-color: #27272a !important;
 }
 
-.react-calendar__month-view__days__day--weekend {
-  color: #72a5f8 !important ;
-}
-
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
   background-color: #3f3f46 !important;
   color: white !important;
   border-radius: 6px;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #72a5f8 !important;
 }
 
 /* The 'X' Delete Button */
@@ -198,12 +198,14 @@ button.load-more-btn {
 }
 
 /* Mobile Responsive */
-
 @media (max-width: 800px) {
   .container {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
+  .header {
+    padding-top: 1rem;
+  }
   .grid-layout {
     display: flex;
     flex-direction: column;
