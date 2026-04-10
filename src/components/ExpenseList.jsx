@@ -13,8 +13,8 @@ function ExpenseList({ expenses, onDeleteExpense }) {
 
   const groupedExpenses = visibleExpenses.reduce((groups, expense) => {
     // Get date string (e.g., "2026-02-01")
-    const dateKey = expense.date.toLocaleDateString();
-
+    const dateKey = `${expense.date.getFullYear()}-${String(expense.date.getMonth() + 1).padStart(2, '0')}-${String(expense.date.getDate()).padStart(2, '0')}`;
+    // → "2026-04-10"
     if (!groups[dateKey]) {
       groups[dateKey] = [];
     }
@@ -24,20 +24,21 @@ function ExpenseList({ expenses, onDeleteExpense }) {
   // groupedExpenses makes the expenses list into a list of objects with datas as the keys and the expense as its values
 
   const formatDateHeader = (dateString) => {
-    const date = new Date(dateString);
-    const today = new Date();
-    const yesterday = new Date();
-    yesterday.setDate(today.getDate() - 1);
+  const [year, month, day] = dateString.split("-").map(Number);
+  const date = new Date(year, month - 1, day); // → correct local date
+  const today = new Date();
+  const yesterday = new Date();
+  yesterday.setDate(today.getDate() - 1);
 
-    if (date.toDateString() === today.toDateString()) return "Today";
-    if (date.toDateString() === yesterday.toDateString()) return "Yesterday";
+  if (date.toDateString() === today.toDateString()) return "Today";
+  if (date.toDateString() === yesterday.toDateString()) return "Yesterday";
 
-    return date.toLocaleDateString("en-US", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-    });
-  };
+  return date.toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  });
+};
 
   const sortedDates = Object.keys(groupedExpenses).sort(
     (a, b) => new Date(b) - new Date(a),
